@@ -36,7 +36,7 @@ export default function AppNavigation() {
               iconName = "search-outline";
             }
 
-            const customizeSize = 25;
+            const customizeSize = 26;
 
             return (
               <Ionicons
@@ -56,9 +56,9 @@ export default function AppNavigation() {
           },
           tabBarStyle: {
             backgroundColor: colorScheme == "dark" ? "black" : "white",
-            // borderTopWidth: 0,
-            // padding: 10,
-            // height: 60,
+            borderTopLeftRadius: 30,
+            borderTopRightRadius: 30,
+            height: 95,
           },
         })}
       >
