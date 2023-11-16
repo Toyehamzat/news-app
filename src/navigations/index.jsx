@@ -11,13 +11,14 @@ import SearchScreen from "../screens/searchScreen";
 import SplashScreen from "../screens/splashScreen";
 import NewsDetailsScreen from "../screens/newsDetailsScreen";
 import WelcomeScreen from "../screens/welcomeScreen";
+import { Ionicons } from "@expo/vector-icons";
 
 const tab = createBottomTabNavigator();
 const stack = createNativeStackNavigator();
 
 export default function AppNavigation() {
   const { colorScheme, toogleScheme } = useColorScheme();
-  const tabNavigator = () => {
+  const TabNavigator = () => {
     return (
       <tab.Navigator
         screenOptions={({ route }) => ({
@@ -61,10 +62,10 @@ export default function AppNavigation() {
           },
         })}
       >
-        <tab.Screen name="home" component={HomeScreen}></tab.Screen>
-        <tab.Screen name="dicover" component={DiscoveryScreen}></tab.Screen>
-        <tab.Screen name="saved" component={SavedScreen}></tab.Screen>
-        <tab.Screen name="search" component={SearchScreen}></tab.Screen>
+        <tab.Screen name="Home" component={HomeScreen}></tab.Screen>
+        <tab.Screen name="Discover" component={DiscoveryScreen}></tab.Screen>
+        <tab.Screen name="Saved" component={SavedScreen}></tab.Screen>
+        <tab.Screen name="Search" component={SearchScreen}></tab.Screen>
       </tab.Navigator>
     );
   };
@@ -73,20 +74,32 @@ export default function AppNavigation() {
       <stack.Navigator>
         <stack.Screen
           initialRouteName="SplashS"
-          screenOptions={{
+          options={{
             headerShown: false,
           }}
           name="splashS"
           component={SplashScreen}
         ></stack.Screen>
-        <stack.Screen name="welcome" component={WelcomeScreen}></stack.Screen>
+        <stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Welcome"
+          component={WelcomeScreen}
+        ></stack.Screen>
         <stack.Screen name="search" component={SearchScreen}></stack.Screen>
         <stack.Screen
           name="newsDetails"
           component={NewsDetailsScreen}
           options={{ animation: "slide_from_bottom" }}
         ></stack.Screen>
-        <stack.Screen name="homeTabs" component={tabNavigator}></stack.Screen>
+        <stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="homeTabs"
+          component={TabNavigator}
+        ></stack.Screen>
       </stack.Navigator>
     </NavigationContainer>
   );
