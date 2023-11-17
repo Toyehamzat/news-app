@@ -11,7 +11,7 @@ export default function Header() {
     <View className="flex-row justify-between items-center mx-4 mt-4">
       <View>
         <Text
-          className="text-2xl text-green-800 uppercase dark:text-green-800"
+          className="text-2xl text-green-800 uppercase dark:text-gray-300"
           style={{
             fontFamily: "SpaceGroteskBold",
           }}

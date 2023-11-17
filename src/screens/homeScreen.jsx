@@ -12,6 +12,8 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import Header from "../components/header";
+import LoadingView from "../components/loading";
+import MiniHeader from "../components/miniHeader";
 
 export default function HomeScreen() {
   const { colorScheme, toggleColorScheme } = useColorScheme();
@@ -52,7 +54,14 @@ export default function HomeScreen() {
     <SafeAreaView>
       <StatusBar style={colorScheme == "dark" ? "light" : "dark"} />
       <Header />
-      <Text>Home screen</Text>
+      {isBreakingNewsLoading ? (
+        <LoadingView />
+      ) : (
+        <View>
+          <MiniHeader label="Breaking News" />
+          <BreakingNews />
+        </View>
+      )}
     </SafeAreaView>
   );
 }
