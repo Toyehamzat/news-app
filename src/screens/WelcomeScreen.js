@@ -19,7 +19,7 @@ export default function Welcome() {
 
   return (
     <ImageBackground
-      source={require("../../assets/image/reporter/picture.jpg")}
+      source={require("../../assets/images/reporter/picture.jpg")}
       className="flex-1 justify-center items-center pb-20"
     >
       <LinearGradient
@@ -56,7 +56,7 @@ export default function Welcome() {
 
       <TouchableOpacity
         className="bg-[#3953f5] rounded-full p-4 justify-center items-center w-[85%] mt-8"
-        onPress={() => navigation.navigate("homeTabs")}
+        onPress={() => navigation.navigate("HomeTabs")}
       >
         <Text className="text-base text-white">Getting Started</Text>
       </TouchableOpacity>

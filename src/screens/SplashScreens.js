@@ -4,7 +4,6 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
-import LoadingView from "../components/loading";
 
 export default function SplashScreens() {
   const navigation = useNavigation();
@@ -37,7 +36,7 @@ export default function SplashScreens() {
     <View className="flex-1" onLayout={onLayoutRootView}>
       <ImageBackground
         className="flex-1 justify-center items-center"
-        source={require("../../assets/image/reporter/picture.jpg")}
+        source={require("../../assets/images/reporter/picture.jpg")}
       >
         <LinearGradient
           colors={["rgba(0,0,0,0.25)", "rgba(0,0,0,0.25)"]}
